@@ -24,7 +24,7 @@ A complete free, easy customized and vector map icons set for map designers. Wit
 ```
 
 # Icons
-![Screenshot](https://github.com/ThinkGeo/SQLiteBitmapTileCacheSample-ForWpf/blob/master/ScreenShot.png)
+![Screenshot](https://github.com/ThinkGeo/Map-Icons-font/blob/dev/icons.png)
 
 # New icon requirement
 
