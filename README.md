@@ -17,7 +17,7 @@ A complete free, easy customized and vector map icons set for map designers. Wit
     WebFont.load({
         custom: {
             families: ["ThinkgeoFont"],
-            urls: ["https://cdn.thinkgeo.com/icons-font/0.1.0/thinkgeo-font.css"]
+            urls: ["https://cdn.thinkgeo.com/VectorMap-icons/0.1.0/thinkgeo-font.css"]
         }
     });
 </script>
@@ -39,6 +39,6 @@ We welcome any contributions from anybody who needs icons for a specific points 
 
 
 # License
-__Map Suite Icons Font__ is licensed under the [Apache 2.0](https://github.com/ThinkGeo/MapSuiteGisEditor/blob/master/LICENSE). 
+__VectorMap-icons__ is licensed under the [Apache 2.0](https://github.com/ThinkGeo/MapSuiteGisEditor/blob/master/LICENSE). 
 
 
