@@ -1,6 +1,7 @@
 @echo off
 setlocal enabledelayedexpansion
 cd  %~dp0
+cd ..
 call git pull
 for /F %%i in ('git rev-parse --short HEAD') do ( set commitid=%%i)
 md dist
@@ -25,16 +26,17 @@ set newversion=1
         if "!s:~1,7!" neq "version" if "!s:~1,8!" neq "lastHead" (echo %%i)
     ) else (goto end)
 ))>icons-config.json
-call move config.json C:\config\config.json
+call move icons-config.json C:\config\icons-config.json
 call aws s3 cp dist\thinkgeo-icons-webfont.css s3://cdnorigin.thinkgeo.com/vectormap-icons/%newversion%/
 call aws s3 cp dist\thinkgeo-icons-webfont.eot s3://cdnorigin.thinkgeo.com/vectormap-icons/%newversion%/
 call aws s3 cp dist\thinkgeo-icons-webfont.svg s3://cdnorigin.thinkgeo.com/vectormap-icons/%newversion%/
 call aws s3 cp dist\thinkgeo-icons-webfont.ttf s3://cdnorigin.thinkgeo.com/vectormap-icons/%newversion%/
 call aws s3 cp dist\thinkgeo-icons-webfont.woff s3://cdnorigin.thinkgeo.com/vectormap-icons/%newversion%/
 call aws s3 cp dist\webfontloader.js s3://cdnorigin.thinkgeo.com/vectormap-icons/%newversion%/
+call cd  %~dp0
 call npm init -y 
 call npm install vectormap-icons
-call xcopy /y /c /h /r dist\"*"  node_modules\vectormap-icons
+call xcopy /y /c /h /r ..\dist\"*"  node_modules\vectormap-icons
 call cd node_modules\vectormap-icons
 call setlocal enabledelayedexpansion
 set f=package.json
@@ -48,7 +50,7 @@ echo %%j:"%newversion%")
 if "!s:~1,7!" neq "version" echo !s!))>temp.json
 del package.json
 ren "temp.json" "package.json"
-npm publish 
-call cd ..\..\
+call npm publish 
+call cd ..\..\..\
 call git clean -xdf
 :end
