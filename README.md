@@ -16,8 +16,8 @@ A complete free, easy customized and vector map icons set for map designers. Wit
 <script>
     WebFont.load({
         custom: {
-            families: ["ThinkgeoFont"],
-            urls: ["https://cdn.thinkgeo.com/icons-font/0.1.0/thinkgeo-font.css"]
+            families: ["vectormap-icons"],
+            urls: ["https://cdn.thinkgeo.com/vectormap-icons/1.0.0/vectormap-icons.css"]
         }
     });
 </script>
